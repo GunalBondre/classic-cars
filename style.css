@@ -1,0 +1,98 @@
+/* colors */
+:root {
+	--main-bg-color: #ccc;
+	--bg-white: #fff;
+	--bg-light-grey: #efefef;
+	--box-shadow: #aaa;
+}
+/*colors declaration end  */
+
+/* commom styles */
+
+* {
+	margin: 0;
+	padding: 0;
+	outline: none;
+	box-sizing: border-box;
+	text-decoration: none;
+	list-style-type: none;
+	font-family: "special-elite", cursive;
+	font-weight: 400;
+}
+
+html {
+	font-size: 62.5%; /* default font size for 1rem = 16px we are decreasing it to 10px  */
+}
+
+body {
+	background-color: var(--main-bg-color);
+	padding-right: 3rem;
+}
+
+/* end of common styles */
+
+/* menu icon */
+.menu {
+	width: 4rem;
+	height: 4rem;
+	background-color: red;
+	position: fixed;
+	left: 2rem;
+	top: 2rem;
+	z-index: 15;
+	transition: left 0.5s;
+}
+
+.menu.change {
+	left: 15vw;
+}
+/* end of menu icon */
+
+/* navbar */
+.navbar {
+	width: 15vw;
+	height: 100vh;
+	background-color: var(--bg-white);
+	position: fixed;
+	top: 0;
+	left: -15vw;
+	display: flex;
+	flex-direction: column;
+	padding: 4rem 0 0 4rem;
+	z-index: 10;
+	transition: left 0.5s;
+}
+
+.navbar.change {
+	left: 0;
+}
+
+.navbar-link {
+	font-size: 1.5rem;
+	margin: 2rem 0;
+}
+/* end of navbar */
+
+/* common styles */
+.wrapper {
+	width: 100%;
+	perspective: 50rem;
+}
+
+section {
+	width: 100%;
+	height: 100vh;
+	background-color: var(--bg-light-grey);
+	position: relative;
+	left: 0;
+	margin-bottom: 3rem;
+	transform-origin: left;
+	box-shadow: 0.5rem 0.5rem 1rem var(--box-shadow);
+	transition: left 0.5s, transform 0.5s;
+}
+
+section.change {
+	left: 15vw;
+	transform: rotateY(10deg);
+}
+/* end of common styles */
