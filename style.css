@@ -4,6 +4,10 @@
 	--bg-white: #fff;
 	--bg-light-grey: #efefef;
 	--box-shadow: #aaa;
+	--text-shadow: #555;
+	--menu-box-shadow: #222;
+	--nav-link-color: #777;
+	--bg-dark-grey: #222;
 }
 /*colors declaration end  */
 
@@ -16,7 +20,7 @@
 	box-sizing: border-box;
 	text-decoration: none;
 	list-style-type: none;
-	font-family: "special-elite", cursive;
+	font-family: "Special Elite", cursive;
 	font-weight: 400;
 }
 
@@ -29,22 +33,53 @@ body {
 	padding-right: 3rem;
 }
 
+.center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+img {
+	width: 100%;
+}
+
 /* end of common styles */
 
 /* menu icon */
 .menu {
 	width: 4rem;
 	height: 4rem;
-	background-color: red;
 	position: fixed;
 	left: 2rem;
 	top: 2rem;
 	z-index: 15;
-	transition: left 0.5s;
+	transition: all 0.5s;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
 }
 
 .menu.change {
 	left: 15vw;
+	transform: rotate(45deg);
+}
+
+.menu-line {
+	width: 100%;
+	height: 0.2rem;
+	margin: 0.3rem 0;
+	background-color: var(--bg-white);
+	box-shadow: 0.1rem 0.1rem 0.2rem var(--menu-box-shadow);
+	transition: transform 0.5s;
+}
+
+.change .menu-line-1 {
+	transform: rotate(270deg) translateX(-0.4rem);
+}
+.change .menu-line-2 {
+	transform: rotate(360deg) translateY(-0.4rem);
 }
 /* end of menu icon */
 
@@ -68,8 +103,16 @@ body {
 }
 
 .navbar-link {
-	font-size: 1.5rem;
+	font-size: 1.2rem;
 	margin: 2rem 0;
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: 0.3rem;
+	color: var(--nav-link-color);
+}
+
+.navbar-link:hover {
+	color: #111;
 }
 /* end of navbar */
 
@@ -85,6 +128,7 @@ section {
 	background-color: var(--bg-light-grey);
 	position: relative;
 	left: 0;
+	padding: 5rem 0 !important;
 	margin-bottom: 3rem;
 	transform-origin: left;
 	box-shadow: 0.5rem 0.5rem 1rem var(--box-shadow);
@@ -95,4 +139,414 @@ section.change {
 	left: 15vw;
 	transform: rotateY(10deg);
 }
+
+.section-heading {
+	font-size: 10rem;
+	font-weight: bolder;
+	color: var(--bg-white);
+	margin-bottom: 10rem;
+	text-shadow: 0.3rem 0.3rem 0.5rem var(--text-shadow);
+	letter-spacing: 1rem;
+	text-align: center;
+}
 /* end of common styles */
+
+.section-1 {
+	flex-direction: column;
+	background: url(images/bg-section1.jpg) center no-repeat;
+	background-size: cover;
+}
+
+.section-1-heading {
+	margin-bottom: 3rem;
+	text-shadow: 1rem 1rem 1rem #000, 2rem 2rem 2rem #111, 3rem 3rem 3rem #222;
+}
+.section-1 img {
+	width: 70%;
+}
+
+/* section 2 */
+.section-2 {
+	width: 100%;
+	padding: 4rem 0;
+}
+
+.section-2 h2 {
+	font-size: 6rem;
+}
+
+.cards-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.cards {
+	width: 50rem;
+	margin: 0 2rem;
+	background-color: var(--bg-white);
+	position: relative;
+	box-shadow: 0.6rem 0.6rem 0.6rem #bbb;
+}
+
+.cards:hover {
+	box-shadow: 0.8rem 0.8rem 0.8rem #bbb;
+}
+.car-heading {
+	position: absolute;
+	left: 2rem;
+	top: 2rem;
+	color: var(--bg-white);
+	font-size: 1.5rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	text-shadow: 0.2rem 0.2rem 0.5rem var(--text-shadow);
+	z-index: 10;
+}
+
+.car-price {
+	font-size: 2rem;
+	padding: 0.5rem 1rem;
+}
+.card-btn {
+	width: 95%;
+	padding: 1rem;
+	border: none;
+	background-color: var(--bg-white);
+	box-shadow: 0.1rem 0.1rem 0.2rem var(--box-shadow);
+	margin-bottom: 1rem;
+	text-transform: uppercase;
+	text-shadow: 0.1rem 0.1rem 0.3rem var(--text-shadow);
+	color: var(--bg-white);
+	font-weight: 700;
+	letter-spacing: 0.2rem;
+	margin: 1rem;
+	font-size: 1.7rem;
+	cursor: pointer;
+}
+.cards img {
+	width: 100%;
+	padding: 1rem;
+	opacity: 0.8;
+	transition: opacity 0.5s;
+}
+.cards img:hover {
+	opacity: 1;
+}
+/* end of section-2 */
+
+/* section-3 */
+.section-3 {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	background-color: var(--bg-dark-grey);
+	padding: 5rem;
+}
+
+.video-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+video {
+	margin: 1rem;
+	width: 25%;
+	border-radius: 0.5rem;
+	opacity: 0.8;
+	box-shadow: 0.3rem 0.3rem 0.5rem #111;
+	cursor: pointer;
+	transition: all 0.5s;
+}
+
+video:hover {
+	opacity: 1;
+	box-shadow: 0.5rem 0.5rem 1rem #111;
+}
+/* end of section-3 */
+
+/* section - 4 */
+
+.section-4 {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.gallery {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	margin: 10rem 0 10rem 0;
+	perspective: 10rem;
+}
+
+.gallery img {
+	width: 15%;
+	margin: 0 2rem;
+	/* display: none; */
+	position: absolute;
+	bottom: 6rem;
+	transform: translateX(-50%) rotateX(0.5deg);
+	box-shadow: 0.2rem -0.2rem 0.5rem #888;
+	border-radius: 0.5rem;
+	transition: all 0.3s;
+	transform-origin: bottom;
+}
+
+.gallery img:hover {
+	transform: translateX(-50%) rotateX(0);
+	box-shadow: 0 0.2rem 0.3rem #888;
+}
+
+.gallery-img-1,
+.gallery-img-4 {
+	left: 50%;
+}
+.gallery-img-3,
+.gallery-img-6 {
+	left: 70%;
+}
+.gallery-img-2,
+.gallery-img-5 {
+	left: 30%;
+}
+
+.shelf {
+	width: 80%;
+	height: 3rem;
+	position: relative;
+	background-color: rgba(38, 126, 199, 0.8);
+	box-shadow: 1rem 1rem 5rem #444;
+}
+
+.shelf::before {
+	content: "";
+	width: 100%;
+	height: 10rem;
+	position: absolute;
+	background-color: rgba(34, 152, 248, 0.7);
+	top: -10rem;
+	transform: rotateX(20deg);
+	transform-origin: bottom;
+}
+/* end of section - 4 */
+
+.section-5 {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
+		url(images/bg-section5.jpg) no-repeat center;
+	background-position: cover;
+	opacity: 1;
+	position: relative;
+	height: auto;
+}
+
+.contact-wrapper {
+	width: 100%;
+	margin: auto;
+}
+
+.contact-wrapper form {
+	width: 60rem;
+	height: 45rem;
+	display: flex;
+	flex-direction: column;
+	padding: 2.5rem;
+	margin: auto;
+	/* background: transparent; */
+	background-color: rgba(255, 255, 255, 0.2);
+	position: relative;
+	z-index: 10;
+	border: 2.5rem solid var(--bg-light-grey);
+}
+.contact-wrapper form input {
+	padding: 1.5rem;
+	width: 100%;
+	margin-bottom: 2rem;
+	background-color: transparent;
+	border: 1px solid var(--bg-white);
+	font-size: 1.5rem;
+	flex-shrink: 0;
+}
+
+input::placeholder {
+	color: #fff;
+	opacity: 0.6;
+}
+.contact-wrapper form input:focus,
+.contact-wrapper form textarea:focus {
+	background-color: rgba(255, 255, 255, 0.5);
+}
+textarea {
+	padding: 0.5rem;
+	margin-bottom: 2.5rem;
+	background-color: transparent;
+	border: 1px solid var(--bg-white);
+	color: #fff;
+	font-size: 1.5rem;
+	opacity: 0.6;
+	max-width: 100%;
+	min-height: 8rem;
+	font-size: 1.5rem;
+}
+
+.contact-wrapper button {
+	padding: 1rem;
+	cursor: pointer;
+	font-weight: bolder;
+	letter-spacing: 0.5rem;
+}
+
+.para-text {
+	color: var(--bg-white);
+	padding-top: 4rem;
+	font-size: 2rem;
+}
+@media (max-width: 1550px) {
+	.navbar {
+		width: 20vw;
+		padding: 2rem 0 0 2rem;
+		left: -20vw;
+	}
+
+	.menu.change {
+		left: 20vw;
+	}
+
+	section.change {
+		left: 20vw;
+		transform: rotateY(15deg);
+	}
+
+	.section-1 {
+		justify-content: space-evenly;
+	}
+
+	.section-heading {
+		font-size: 7rem;
+	}
+
+	.cards-wrapper {
+		flex-wrap: wrap;
+	}
+
+	.section-2 {
+		height: auto;
+		padding: 5rem 0 10rem 0;
+	}
+
+	.cards {
+		width: 40rem;
+		margin: 3rem;
+	}
+
+	.section-4 {
+		height: auto;
+	}
+
+	.gallery {
+		margin: 12rem 0;
+	}
+
+	.shelf {
+		width: 90%;
+	}
+
+	.gallery img {
+		width: 20%;
+	}
+
+	.gallery-img-2,
+	.gallery-img-5 {
+		left: 25%;
+	}
+	.gallery-img-3,
+	.gallery-img-6 {
+		left: 75%;
+	}
+}
+@media (max-width: 767px) {
+	.navbar {
+		width: 30vw;
+		padding: 2rem 0 0 2rem;
+		left: -30vw;
+	}
+
+	.menu.change {
+		left: 30vw;
+	}
+
+	section.change {
+		left: 30vw;
+		transform: rotateY(25deg);
+	}
+
+	.section-heading {
+		font-size: 5.5rem;
+	}
+
+	.shelf {
+		width: 95%;
+		height: 2rem;
+	}
+}
+
+@media (max-width: 480px) {
+	html {
+		font-size: 50%;
+	}
+
+	.section-heading {
+		font-size: 3rem;
+		margin-bottom: 4rem;
+	}
+	.section-2 h2 {
+		font-size: 3rem;
+	}
+	.contact-wrapper form {
+		width: 40rem;
+	}
+	.navbar {
+		width: 35vw;
+		padding: 2rem 0 0 2rem;
+		left: -35vw;
+	}
+
+	.menu.change {
+		left: 35vw;
+	}
+
+	section.change {
+		left: 35vw;
+		transform: rotateY(25deg);
+	}
+	section {
+		height: 60vh;
+	}
+
+	video {
+		width: 30%;
+	}
+	.gallery {
+		margin: 7rem 0;
+	}
+
+	.gallery-img-2,
+	.gallery-img-5 {
+		left: 20%;
+	}
+	.gallery-img-3,
+	.gallery-img-6 {
+		left: 70%;
+	}
+	.gallery-img-1,
+	.gallery-img-4 {
+		left: 45%;
+	}
+}
