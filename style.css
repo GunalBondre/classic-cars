@@ -171,9 +171,9 @@ section.change {
 	padding: 4rem 0;
 }
 
-.section-2 h2 {
+/* .section-2 h2 {
 	font-size: 6rem;
-}
+} */
 
 .cards-wrapper {
 	display: flex;
@@ -488,12 +488,17 @@ textarea {
 	}
 
 	.section-heading {
-		font-size: 5.5rem;
+		font-size: 4.5rem;
+		margin-bottom: 6rem;
 	}
 
 	.shelf {
 		width: 95%;
 		height: 2rem;
+	}
+
+	video {
+		width: 31%;
 	}
 }
 
